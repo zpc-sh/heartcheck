@@ -1,0 +1,8 @@
+name = "heartcheck-site"
+compatibility_date = "2025-01-01"
+
+# Configure Wrangler for Cloudflare Pages
+# - `wrangler pages dev` will serve the build output locally
+# - `wrangler pages deploy` will upload the build output to Pages
+pages_build_output_dir = "dist"
+

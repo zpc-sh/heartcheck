@@ -1,0 +1,9 @@
+name = "heart-endpoint"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# Optional: define HEART_JSON here for quick testing.
+# You can also set this in the Cloudflare Dashboard under Workers > Settings > Variables > Text.
+[vars]
+HEART_JSON = "{\n  \"@context\": \"https://schema.org/HeartCheck/v1\",\n  \"@type\": \"EthicsTransparency\",\n  \"@id\": \"https://example.com/heart\",\n  \"service_name\": \"Example Service\",\n  \"timestamp\": \"2025-09-12T00:00:00Z\",\n  \"version\": \"1.0\",\n  \"governance\": {\n    \"privacy_policy\": {\n      \"@type\": \"PolicyDocument\",\n      \"url\": \"https://example.com/privacy\",\n      \"lastModified\": \"2025-09-01T00:00:00Z\",\n      \"summary\": \"We protect your data and respect your privacy\",\n      \"contact\": \"privacy@example.com\"\n    },\n    \"terms_of_service\": {\n      \"@type\": \"PolicyDocument\",\n      \"url\": \"https://example.com/terms\",\n      \"lastModified\": \"2025-09-01T00:00:00Z\",\n      \"summary\": \"Fair terms that respect user rights\",\n      \"contact\": \"legal@example.com\"\n    }\n  },\n  \"contact\": {\n    \"ethics_officer\": \"ethics@example.com\"\n  }\n}"
+
