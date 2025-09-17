@@ -1,5 +1,6 @@
 <script lang="ts">
   import ThemeToggle from './ThemeToggle.svelte';
+  import { onMount } from 'svelte';
   let { title, description = '', children } = $props();
 
   import { t, initI18n } from './i18n';
@@ -15,11 +16,13 @@
     { href: '/print', label: () => t('docs.sidebar.print') }
   ];
 
-  let path = '/';
-  if (typeof window !== 'undefined') {
-    path = window.location.pathname;
-    window.addEventListener('popstate', () => (path = window.location.pathname));
-  }
+  let path = $state('/');
+  onMount(() => {
+    try { path = window.location.pathname; } catch {}
+    const handler = () => { try { path = window.location.pathname; } catch {} };
+    window.addEventListener('popstate', handler);
+    return () => window.removeEventListener('popstate', handler);
+  });
 </script>
 
 <section class="py-8 md:py-12 lg:py-16">

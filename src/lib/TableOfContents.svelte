@@ -35,6 +35,15 @@
           a.className = 'anchor-link ml-2 text-muted-foreground hover:text-foreground no-underline';
           a.setAttribute('aria-label', 'Link to section');
           a.textContent = '🔗';
+          a.addEventListener('click', (e) => {
+            e.preventDefault();
+            const url = `${location.origin}${location.pathname}#${it.id}`;
+            try { navigator.clipboard.writeText(url); } catch {}
+            const prev = a.textContent;
+            a.textContent = '✓';
+            setTimeout(() => { a.textContent = prev || '🔗'; }, 800);
+            history.replaceState(null, '', `#${it.id}`);
+          });
           el.appendChild(a);
         }
       });

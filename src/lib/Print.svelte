@@ -24,10 +24,10 @@
 
 <style>
   @media print {
-    nav, footer { display: none !important; }
-    pre { page-break-inside: avoid; }
-    a[href]:after { content: " (" attr(href) ")"; font-size: 0.85em; }
-    body { background: white; color: black; }
+    :global(nav), :global(footer) { display: none !important; }
+    :global(pre) { page-break-inside: avoid; }
+    :global(a[href]:after) { content: " (" attr(href) ")"; font-size: 0.85em; }
+    :global(body) { background: white; color: black; }
   }
   .screen-only { display: block; }
   @media print { .screen-only { display: none !important; } }

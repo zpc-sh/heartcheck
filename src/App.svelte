@@ -20,13 +20,16 @@
   import DocsRFC from './lib/DocsRFC.svelte';
   import Viral from './lib/Viral.svelte';
   import Print from './lib/Print.svelte';
+  import LandingExplainer from './lib/LandingExplainer.svelte';
   import { onMount } from 'svelte';
 
-  let path = '/';
-  if (typeof window !== 'undefined') {
-    path = window.location.pathname;
-    window.addEventListener('popstate', () => (path = window.location.pathname));
-  }
+  let path = $state('/');
+  onMount(() => {
+    try { path = window.location.pathname; } catch {}
+    const handler = () => { try { path = window.location.pathname; } catch {} };
+    window.addEventListener('popstate', handler);
+    return () => window.removeEventListener('popstate', handler);
+  });
 
   // Ensure initial theme is applied before user interacts
   onMount(() => {
@@ -64,6 +67,7 @@
       <Print />
     {:else}
       <Hero />
+      <LandingExplainer />
     {/if}
   </main>
   <Footer />

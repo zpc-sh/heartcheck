@@ -10,6 +10,7 @@ const en: Dict = {
   'hero.title': 'HeartCheck: a simple /heart endpoint',
   'hero.desc': 'One lightweight JSON-LD response for ethics transparency — governance links, key contacts, and optional self‑assessed metrics.',
   'hero.cta': 'Deploy your /heart',
+  'hero.subhead': 'Ready in minutes. No backend required.',
 
   'docs.sidebar.rfc': 'RFC',
   'docs.sidebar.spec': 'Spec',
@@ -30,6 +31,7 @@ const es: Dict = {
   'hero.title': 'HeartCheck: un endpoint /heart simple',
   'hero.desc': 'Una respuesta JSON-LD ligera para transparencia ética — enlaces de gobernanza, contactos clave y métricas autoevaluadas opcionales.',
   'hero.cta': 'Implementa tu /heart',
+  'hero.subhead': 'Listo en minutos. No se requiere backend.',
 
   'docs.sidebar.rfc': 'RFC',
   'docs.sidebar.spec': 'Especificación',
@@ -66,4 +68,3 @@ export function t(key: string): string {
   const dict = dictionaries[currentLocale] || dictionaries.en;
   return dict[key] || dictionaries.en[key] || key;
 }
-
