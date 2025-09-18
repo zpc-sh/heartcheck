@@ -23,7 +23,7 @@
 				class="text-sm text-muted-foreground hover:text-foreground">RFC</a
 			>
 			<a
-				href="https://github.com/nocsi/heartcheck"
+				href="https://github.com/zpc-sh/heartcheck"
 				class="text-sm text-muted-foreground hover:text-foreground">GitHub</a
 			>
 			<a href="mailto:l@zpc.sh" class="text-sm text-muted-foreground hover:text-foreground"

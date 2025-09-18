@@ -21,7 +21,7 @@
 				variant="outline"
 				size="lg"
 				class="h-11 px-8"
-				href="https://github.com/nocsi/heartcheck"
+				href="https://github.com/zpc-sh/heartcheck"
 			>
 				Implementation Support
 			</Button>

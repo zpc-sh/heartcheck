@@ -47,7 +47,8 @@
 			<LanguageSwitcher />
 			<ThemeToggle />
 			<Button variant="ghost" size="sm" href="./heartcheck_rfc_updated%202.md">RFC</Button>
-			<Button size="sm" variant="outline" href="https://github.com/nocsi/heartcheck">GitHub</Button>
+			<Button size="sm" variant="outline" href="https://github.com/zpc-sh/heartcheck">GitHub</Button
+			>
 		</nav>
 	</div>
 </nav>
