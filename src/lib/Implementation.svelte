@@ -104,8 +104,13 @@ def heart():
 	};
 </script>
 
-<section id="implementation" class="space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-20 scroll-mt-20">
-	<div class="mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-8 flex flex-col items-center space-y-4 text-center">
+<section
+	id="implementation"
+	class="scroll-mt-20 space-y-6 bg-slate-50 py-8 md:py-12 lg:py-20 dark:bg-transparent"
+>
+	<div
+		class="mx-auto flex w-full max-w-screen-xl flex-col items-center space-y-4 px-4 text-center sm:px-6 lg:px-8"
+	>
 		<h2 class="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">Implementation</h2>
 		<p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
 			Use a single endpoint to expose ethics transparency. Below are examples.
@@ -124,10 +129,14 @@ def heart():
 				<Card>
 					<CardHeader>
 						<CardTitle>Response Schema (JSON-LD)</CardTitle>
-						<CardDescription>Minimal example including governance documents and contacts.</CardDescription>
+						<CardDescription
+							>Minimal example including governance documents and contacts.</CardDescription
+						>
 					</CardHeader>
 					<CardContent>
-						<pre class="overflow-x-auto rounded-lg bg-muted p-4 text-sm"><code>{codeExamples.json}</code></pre>
+						<pre class="overflow-x-auto rounded-lg bg-muted p-4 text-sm"><code
+								>{codeExamples.json}</code
+							></pre>
 					</CardContent>
 				</Card>
 			</TabsContent>
@@ -139,7 +148,9 @@ def heart():
 						<CardDescription>Serve GET /heart with JSON-LD.</CardDescription>
 					</CardHeader>
 					<CardContent>
-						<pre class="overflow-x-auto rounded-lg bg-muted p-4 text-sm"><code>{codeExamples.node}</code></pre>
+						<pre class="overflow-x-auto rounded-lg bg-muted p-4 text-sm"><code
+								>{codeExamples.node}</code
+							></pre>
 					</CardContent>
 				</Card>
 			</TabsContent>
@@ -151,7 +162,9 @@ def heart():
 						<CardDescription>Serve GET /heart with JSON-LD.</CardDescription>
 					</CardHeader>
 					<CardContent>
-						<pre class="overflow-x-auto rounded-lg bg-muted p-4 text-sm"><code>{codeExamples.python}</code></pre>
+						<pre class="overflow-x-auto rounded-lg bg-muted p-4 text-sm"><code
+								>{codeExamples.python}</code
+							></pre>
 					</CardContent>
 				</Card>
 			</TabsContent>

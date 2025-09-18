@@ -31,4 +31,3 @@ That’s it — your `/heart` endpoint is live.
 - Optionally include `contact` and self‑assessed metrics (dignity_score, etc.)
 
 For examples, see the main site’s Examples and Field Definitions sections.
-

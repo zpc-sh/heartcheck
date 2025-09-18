@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { HTMLLiAttributes } from "svelte/elements";
-	import type { WithElementRef } from "../../utils.ts";
+	import type { HTMLLiAttributes } from 'svelte/elements';
+	import type { WithElementRef } from '../../utils.ts';
 
 	let {
 		ref = $bindable(null),

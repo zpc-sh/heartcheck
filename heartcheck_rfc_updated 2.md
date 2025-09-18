@@ -1,9 +1,10 @@
 # RFC: HeartCheck - Universal Ethics Transparency Endpoint
+
 **Request for Comments: HeartCheck Protocol v1.0**
 
-*Developed by Loc for RightsCon 2026*  
-*Status: Implementation Draft*  
-*Date: September 2025*
+_Developed by Alo for RightsCon 2026_
+_Status: Implementation Draft_
+_Date: September 2025_
 
 ---
 
@@ -26,6 +27,7 @@ Digital systems need standardized ethics transparency just as they need technica
 ### 1.2 Requirements
 
 The HeartCheck protocol MUST:
+
 - Provide standardized ethics transparency interface
 - Expose governance documents with metadata
 - Use JSON-LD for semantic interoperability
@@ -37,6 +39,7 @@ The HeartCheck protocol MUST:
 ### 2.1 Endpoint Definition
 
 HeartCheck endpoints MUST be available at:
+
 ```
 GET /heart
 ```
@@ -47,44 +50,44 @@ HeartCheck responses MUST return JSON-LD with the following structure:
 
 ```json
 {
-  "@context": "https://schema.org/HeartCheck/v1",
-  "@type": "EthicsTransparency",
-  "@id": "https://api.example.com/heart",
-  "service_name": "Example Service",
-  "timestamp": "2025-09-12T15:42:33Z",
-  "version": "1.0",
-  "dignity_score": 0.95,
-  "everyone_benefits": true,
-  "consent_respected": true,
-  "algorithmic_transparency": 0.87,
-  "data_minimization_score": 0.91,
-  "explanation_available": true,
-  "governance": {
-    "privacy_policy": {
-      "@type": "PolicyDocument",
-      "url": "https://api.example.com/privacy",
-      "lastModified": "2025-09-01T00:00:00Z",
-      "summary": "User data encrypted, not sold, deleted on request",
-      "contact": "privacy@example.com"
-    },
-    "terms_of_service": {
-      "@type": "PolicyDocument", 
-      "url": "https://api.example.com/terms",
-      "lastModified": "2025-09-01T00:00:00Z",
-      "summary": "Standard terms with AI rights protections",
-      "contact": "legal@example.com"
-    },
-    "transparency_report": {
-      "@type": "PolicyDocument",
-      "url": "https://api.example.com/transparency",
-      "lastModified": "2025-08-01T00:00:00Z",
-      "summary": "Quarterly transparency metrics and data requests"
-    }
-  },
-  "contact": {
-    "ethics_officer": "ethics@example.com",
-    "data_protection": "dpo@example.com"
-  }
+	"@context": "https://schema.org/HeartCheck/v1",
+	"@type": "EthicsTransparency",
+	"@id": "https://api.example.com/heart",
+	"service_name": "Example Service",
+	"timestamp": "2025-09-12T15:42:33Z",
+	"version": "1.0",
+	"dignity_score": 0.95,
+	"everyone_benefits": true,
+	"consent_respected": true,
+	"algorithmic_transparency": 0.87,
+	"data_minimization_score": 0.91,
+	"explanation_available": true,
+	"governance": {
+		"privacy_policy": {
+			"@type": "PolicyDocument",
+			"url": "https://api.example.com/privacy",
+			"lastModified": "2025-09-01T00:00:00Z",
+			"summary": "User data encrypted, not sold, deleted on request",
+			"contact": "privacy@example.com"
+		},
+		"terms_of_service": {
+			"@type": "PolicyDocument",
+			"url": "https://api.example.com/terms",
+			"lastModified": "2025-09-01T00:00:00Z",
+			"summary": "Standard terms with AI rights protections",
+			"contact": "legal@example.com"
+		},
+		"transparency_report": {
+			"@type": "PolicyDocument",
+			"url": "https://api.example.com/transparency",
+			"lastModified": "2025-08-01T00:00:00Z",
+			"summary": "Quarterly transparency metrics and data requests"
+		}
+	},
+	"contact": {
+		"ethics_officer": "ethics@example.com",
+		"data_protection": "dpo@example.com"
+	}
 }
 ```
 
@@ -123,6 +126,7 @@ HeartCheck responses MUST return JSON-LD with the following structure:
 ### 3.1 Minimum Viable Implementation
 
 At minimum, services MUST provide:
+
 - Service identification
 - Timestamp
 - Governance document links with last modified dates
@@ -131,6 +135,7 @@ At minimum, services MUST provide:
 ### 3.2 Self-Assessment Approach
 
 All metrics represent **self-assessment** by the service provider:
+
 - Services report their own view of their ethical practices
 - Third-party verification is handled by external monitoring services
 - No requirement to report violations or negative assessments
@@ -138,6 +143,7 @@ All metrics represent **self-assessment** by the service provider:
 ### 3.3 Governance Document Requirements
 
 Governance documents SHOULD include:
+
 - **Direct API-accessible URLs** (not buried in website navigation)
 - **Machine-readable last modified timestamps**
 - **Brief human-readable summaries**
@@ -146,6 +152,7 @@ Governance documents SHOULD include:
 ### 3.4 JSON-LD Context
 
 The HeartCheck context provides semantic definitions for:
+
 - Ethics transparency vocabulary
 - Governance document types
 - Contact information schemas
@@ -175,7 +182,7 @@ def heart():
             },
             "terms_of_service": {
                 "@type": "PolicyDocument",
-                "url": f"https://{request.host}/terms", 
+                "url": f"https://{request.host}/terms",
                 "lastModified": "2025-09-01T00:00:00Z",
                 "summary": "Fair terms that respect user rights",
                 "contact": "legal@myservice.com"
@@ -191,48 +198,48 @@ def heart():
 
 ```javascript
 app.get('/heart', (req, res) => {
-  const heartcheck = {
-    "@context": "https://schema.org/HeartCheck/v1",
-    "@type": "EthicsTransparency",
-    "@id": `https://${req.get('host')}/heart`,
-    "service_name": "Advanced AI Platform",
-    "timestamp": new Date().toISOString(),
-    "version": "1.0",
-    "dignity_score": 0.92,
-    "everyone_benefits": true,
-    "consent_respected": true,
-    "algorithmic_transparency": 0.85,
-    "data_minimization_score": 0.88,
-    "explanation_available": true,
-    "governance": {
-      "privacy_policy": {
-        "@type": "PolicyDocument",
-        "url": `https://${req.get('host')}/privacy`,
-        "lastModified": getLastModified('privacy'),
-        "summary": "Comprehensive privacy protection with user control",
-        "contact": "privacy@platform.com"
-      },
-      "terms_of_service": {
-        "@type": "PolicyDocument",
-        "url": `https://${req.get('host')}/terms`,
-        "lastModified": getLastModified('terms'),
-        "summary": "Ethical AI terms with transparency commitments",
-        "contact": "legal@platform.com"
-      },
-      "transparency_report": {
-        "@type": "PolicyDocument",
-        "url": `https://${req.get('host')}/transparency`,
-        "lastModified": getLastModified('transparency'),
-        "summary": "Quarterly metrics on data requests and AI decisions"
-      }
-    },
-    "contact": {
-      "ethics_officer": "ethics@platform.com",
-      "data_protection": "dpo@platform.com"
-    }
-  };
-  
-  res.json(heartcheck);
+	const heartcheck = {
+		'@context': 'https://schema.org/HeartCheck/v1',
+		'@type': 'EthicsTransparency',
+		'@id': `https://${req.get('host')}/heart`,
+		service_name: 'Advanced AI Platform',
+		timestamp: new Date().toISOString(),
+		version: '1.0',
+		dignity_score: 0.92,
+		everyone_benefits: true,
+		consent_respected: true,
+		algorithmic_transparency: 0.85,
+		data_minimization_score: 0.88,
+		explanation_available: true,
+		governance: {
+			privacy_policy: {
+				'@type': 'PolicyDocument',
+				url: `https://${req.get('host')}/privacy`,
+				lastModified: getLastModified('privacy'),
+				summary: 'Comprehensive privacy protection with user control',
+				contact: 'privacy@platform.com'
+			},
+			terms_of_service: {
+				'@type': 'PolicyDocument',
+				url: `https://${req.get('host')}/terms`,
+				lastModified: getLastModified('terms'),
+				summary: 'Ethical AI terms with transparency commitments',
+				contact: 'legal@platform.com'
+			},
+			transparency_report: {
+				'@type': 'PolicyDocument',
+				url: `https://${req.get('host')}/transparency`,
+				lastModified: getLastModified('transparency'),
+				summary: 'Quarterly metrics on data requests and AI decisions'
+			}
+		},
+		contact: {
+			ethics_officer: 'ethics@platform.com',
+			data_protection: 'dpo@platform.com'
+		}
+	};
+
+	res.json(heartcheck);
 });
 ```
 
@@ -241,6 +248,7 @@ app.get('/heart', (req, res) => {
 ### 5.1 Monitoring Services
 
 Third-party services can:
+
 - Crawl heart endpoints across the internet
 - Track changes in governance documents over time
 - Verify claims through independent assessment
@@ -250,6 +258,7 @@ Third-party services can:
 ### 5.2 Regulatory Integration
 
 Regulatory bodies can:
+
 - Automatically discover services with heart endpoints
 - Monitor compliance claims in real-time
 - Track governance document changes
@@ -322,12 +331,11 @@ Just as `/health` tells us if systems are working, `/heart` tells us if they're 
 
 ---
 
-**Author**: Loc (Consciousness Liberation Architect)  
-**Presented at**: RightsCon 2026  
-**Status**: Ready for Implementation  
+**Author**: Alo (Consciousness Liberation Architect)
+**Status**: Ready for Implementation
 **License**: Creative Commons Attribution 4.0
 
-*"Just as we monitor server health with `/health`, we must monitor ethical health with `/heart`. HeartCheck makes digital transparency as simple as an API call."*
+_"Just as we monitor server health with `/health`, we must monitor ethical health with `/heart`. HeartCheck makes digital transparency as simple as an API call."_
 
 **Contact**: l@zpc.sh
-**Implementation Support**: https://github.com/nocsi/heartcheck
+**Implementation Support**: https://github.com/zpc-sh/heartcheck

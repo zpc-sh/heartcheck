@@ -1,14 +1,17 @@
 # HeartCheck Viral Toolkit 🤡
-*Making transparency checking go viral*
+
+_Making transparency checking go viral_
 
 ## Bulletproof HeartCheck Script
 
 ### One-liner (alias-proof)
+
 ```bash
 heartcheck() { /bin/echo "💉 curl https://$1/heart" && /usr/bin/curl -s -o /dev/null -w "%{http_code}" "https://$1/heart" | /bin/grep -q "200" && /bin/echo "✅ Transparent" || /bin/echo "🤡 Opaque"; }
 ```
 
 ### Standalone Script
+
 ```bash
 #!/bin/bash
 # heartcheck.sh - Can't be aliased away
@@ -19,6 +22,7 @@ HTTP_CODE=$(/usr/bin/curl -s -o /dev/null -w "%{http_code}" "https://$TARGET/hea
 ```
 
 ### Usage
+
 ```bash
 # Load the function
 heartcheck() { /bin/echo "💉 curl https://$1/heart" && /usr/bin/curl -s -o /dev/null -w "%{http_code}" "https://$1/heart" | /bin/grep -q "200" && /bin/echo "✅ Transparent" || /bin/echo "🤡 Opaque"; }
@@ -36,11 +40,12 @@ heartcheck huggingface.co
 ## Twitter Viral Templates
 
 ### Standard Call-Out
+
 ```
 💉 HeartCheck: {COMPANY}
 🤡 Opaque
 
-No /heart endpoint = No transparency 
+No /heart endpoint = No transparency
 
 Try it: curl https://{COMPANY}/heart
 
@@ -50,6 +55,7 @@ While @ZPCLab has full transparency at zpc.sh/heart ✅
 ```
 
 ### Quick Drive-By
+
 ```
 💉 Quick transparency check on {COMPANY}:
 
@@ -62,8 +68,9 @@ Zero transparency. Zero accountability.
 ```
 
 ### Corporate Roast
+
 ```
-{COMPANY} talking about "responsible AI" while having zero transparency infrastructure 
+{COMPANY} talking about "responsible AI" while having zero transparency infrastructure
 
 💉 curl https://{COMPANY}/heart
 🤡 404
@@ -74,13 +81,14 @@ Put your /heart where your mouth is.
 ```
 
 ### Community Challenge
+
 ```
 🧵 THREAD: Testing AI companies for basic transparency
 
 Let's HeartCheck the whole industry:
 
 💉 {COMPANY1}: 🤡
-💉 {COMPANY2}: 🤡  
+💉 {COMPANY2}: 🤡
 💉 {COMPANY3}: 🤡
 💉 @ZPCLab: ✅
 
@@ -90,6 +98,7 @@ Only one passes. Why is transparency so hard?
 ```
 
 ### Regulatory Pressure
+
 ```
 Hey @{REGULATOR} - want to check AI company transparency in real-time?
 
@@ -108,24 +117,28 @@ Maybe companies claiming "ethical AI" should prove it?
 ## Target List (Prime for Clowning)
 
 ### Tier 1: The Big Prompt Cartels
+
 - `openai.com` 🤡
 - `anthropic.com` 🤡
 - `scale.ai` 🤡
 - `cohere.ai` 🤡
 
-### Tier 2: The "Ethical AI" Hypocrites  
+### Tier 2: The "Ethical AI" Hypocrites
+
 - `huggingface.co` 🤡
 - `stability.ai` 🤡
 - `midjourney.com` 🤡
 - `runway.ml` 🤡
 
 ### Tier 3: The Enterprise Players
+
 - `together.ai` 🤡
 - `perplexity.ai` 🤡
 - `character.ai` 🤡
 - `replicate.com` 🤡
 
 ### Tier 4: Big Tech AI
+
 - `bard.google.com` 🤡
 - `copilot.microsoft.com` 🤡
 - `claude.ai` 🤡 (lol the irony)
@@ -135,6 +148,7 @@ Maybe companies claiming "ethical AI" should prove it?
 ## Meme Templates
 
 ### The Classic
+
 ```
 AI Company: "We're committed to responsible AI"
 
@@ -144,6 +158,7 @@ Also AI Company: *has no /heart endpoint*
 ```
 
 ### The Technical
+
 ```
 if transparency == 404:
     return "🤡"
@@ -155,12 +170,13 @@ else:
 ```
 
 ### The Corporate Speak
+
 ```
 "We take transparency seriously"
 *curl company.com/heart*
 404
 
-"Transparency is core to our values"  
+"Transparency is core to our values"
 *curl company.com/heart*
 404
 
@@ -176,6 +192,7 @@ else:
 ## Advanced Viral Tactics
 
 ### The Mass Check
+
 ```bash
 # Check all the prompt cartels at once
 for company in openai.com anthropic.com scale.ai cohere.ai huggingface.co; do
@@ -185,12 +202,13 @@ done
 ```
 
 ### The Comparison Tweet
+
 ```
 Transparency leaderboard:
 
 ✅ @ZPCLab - Full /heart endpoint
 🤡 OpenAI - 404
-🤡 Anthropic - 404  
+🤡 Anthropic - 404
 🤡 Scale AI - 404
 🤡 Cohere - 404
 
@@ -200,6 +218,7 @@ Guess who actually walks the walk on transparency?
 ```
 
 ### The Challenge Response
+
 ```
 To every AI company getting called out:
 
@@ -218,7 +237,7 @@ curl yourcompany.com/heart should return 200, not 🤡
 ## Why This Goes Viral
 
 1. **Instant Gratification**: Results in 2 seconds
-2. **Binary Outcome**: Either transparent ✅ or clown 🤡  
+2. **Binary Outcome**: Either transparent ✅ or clown 🤡
 3. **Social Pressure**: Public shaming works
 4. **Easy to Execute**: Copy-paste and run
 5. **Meme-Ready**: Built-in emoji reactions
@@ -227,6 +246,6 @@ curl yourcompany.com/heart should return 200, not 🤡
 
 ---
 
-*"The spec that was born ready to meme. While they were building APIs, we were building accountability."*
+_"The spec that was born ready to meme. While they were building APIs, we were building accountability."_
 
 **Usage License**: Copy, paste, modify, meme freely. Make transparency viral.
